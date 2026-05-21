@@ -101,15 +101,22 @@ textarea {
 }
 
 .brand-mark {
-  width: 44px;
-  height: 44px;
+  width: 52px;
+  height: 52px;
   display: grid;
   place-items: center;
-  background: var(--ink);
-  color: #fff;
-  border-radius: 50%;
-  font-family: "Lora", Georgia, serif;
-  font-weight: 700;
+  padding: 5px;
+  background: #fff8f1;
+  border: 1px solid rgba(184, 97, 77, 0.24);
+  border-radius: var(--radius);
+  box-shadow: 0 10px 24px rgba(36, 48, 47, 0.1);
+  overflow: hidden;
+}
+
+.brand-mark img {
+  width: 96%;
+  height: 96%;
+  object-fit: contain;
 }
 
 .brand strong,
@@ -194,6 +201,34 @@ textarea {
 
 .hero-content {
   width: min(720px, 100%);
+}
+
+.hero-logo-lockup {
+  width: fit-content;
+  max-width: 100%;
+  min-height: 72px;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 24px;
+  padding: 8px 16px 8px 10px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: var(--radius);
+  color: #fff;
+  font-weight: 800;
+  backdrop-filter: blur(16px);
+}
+
+.hero-logo-lockup img {
+  width: 42px;
+  height: 56px;
+  object-fit: contain;
+  flex: 0 0 auto;
+}
+
+.hero-logo-lockup span {
+  overflow-wrap: anywhere;
 }
 
 .eyebrow {
@@ -753,8 +788,9 @@ details p {
   }
 
   .brand-mark {
-    width: 40px;
-    height: 40px;
+    width: 44px;
+    height: 44px;
+    padding: 4px;
   }
 
   .hero {
@@ -765,6 +801,17 @@ details p {
 
   .hero-actions {
     display: grid;
+  }
+
+  .hero-logo-lockup {
+    min-height: 62px;
+    padding-right: 12px;
+    font-size: 0.9rem;
+  }
+
+  .hero-logo-lockup img {
+    width: 34px;
+    height: 46px;
   }
 
   .button {
