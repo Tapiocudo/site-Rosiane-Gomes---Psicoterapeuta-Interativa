@@ -1,105 +1,337 @@
 <!doctype html>
-<html lang="pt-BR">
+<html lang="pt-PT">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Cadastro de Usuários</title>
+    <title>Rosiane Gomes | Psicoterapeuta Integrativa</title>
+    <meta
+      name="description"
+      content="Rosiane Gomes, psicoterapeuta integrativa, psicanalista e terapeuta cristã. Acompanhamento para restauração emocional, autoestima e propósito de vida."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="styles.css" />
-    <script src="scripts.js" defer></script>
   </head>
   <body>
-    <main class="app">
-      <section class="hero" aria-labelledby="page-title">
-        <p class="eyebrow">Fetch API + Web Storage API</p>
-        <h1 id="page-title">Cadastro de usuários</h1>
-        <p>
-          Digite o CEP para preencher o endereço automaticamente. Os dados ficam
-          salvos no navegador e voltam ao recarregar a página.
-        </p>
+    <header class="site-header" data-header>
+      <div class="topbar">
+        <a href="mailto:rosianegomes.terapeuta@gmail.com" aria-label="Enviar email">
+          <i data-lucide="mail"></i>
+          rosianegomes.terapeuta@gmail.com
+        </a>
+        <a href="tel:+351933273952" aria-label="Telefonar">
+          <i data-lucide="phone"></i>
+          +351 933 273 952
+        </a>
+        <span>
+          <i data-lucide="map-pin"></i>
+          Online e presencial
+        </span>
+      </div>
+
+      <nav class="navbar" aria-label="Navegacao principal">
+        <a class="brand" href="#inicio" aria-label="Rosiane Gomes">
+          <span class="brand-mark">RG</span>
+          <span>
+            <strong>Rosiane Gomes</strong>
+            <small>Psicoterapeuta Integrativa</small>
+          </span>
+        </a>
+
+        <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" data-menu-toggle>
+          <i data-lucide="menu"></i>
+        </button>
+
+        <div class="nav-links" data-nav-links>
+          <a href="#sobre">Sobre</a>
+          <a href="#abordagem">Abordagem</a>
+          <a href="#terapias">Terapias</a>
+          <a href="#depoimentos">Depoimentos</a>
+          <a href="#contactos">Contactos</a>
+          <a class="nav-cta" href="#contactos">
+            <i data-lucide="calendar-check"></i>
+            Agendar
+          </a>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" id="inicio" aria-labelledby="hero-title">
+        <div class="hero-content">
+          <p class="eyebrow">Acompanhamento emocional para uma vida com mais clareza</p>
+          <h1 id="hero-title">Rosiane Gomes</h1>
+          <p class="hero-subtitle">
+            Psicoterapeuta Integrativa, Psicanalista e criadora do Método Raiz Vida Plena.
+            Especialista em desenvolvimento emocional e restauração interior, ajuda pessoas a
+            superar bloqueios, fortalecer a autoestima e desenvolver uma vida com mais equilibrio,
+            clareza e propósito através de uma abordagem integrativa baseada em neurociência, PNL e
+            fundamentos bíblicos.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#contactos">
+              <i data-lucide="message-circle"></i>
+              Marcar conversa
+            </a>
+            <a class="button secondary" href="#terapias">
+              <i data-lucide="heart-handshake"></i>
+              Ver terapias
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-panel" aria-label="Resumo de atendimento">
+          <div>
+            <strong>Atendimento</strong>
+            <span>Adultos e jovens adultos</span>
+          </div>
+          <div>
+            <strong>Formato</strong>
+            <span>Online ou presencial</span>
+          </div>
+          <div>
+            <strong>Primeiro passo</strong>
+            <span>Conversa inicial de orientacao</span>
+          </div>
+        </div>
       </section>
 
-      <form class="form-card" id="userForm" autocomplete="on">
-        <div class="form-status" id="formStatus" role="status" aria-live="polite"></div>
+      <section class="intro-strip" aria-label="Temas de acompanhamento">
+        <span><i data-lucide="sparkles"></i> Ansiedade</span>
+        <span><i data-lucide="leaf"></i> Autoconhecimento</span>
+        <span><i data-lucide="users"></i> Relacoes</span>
+        <span><i data-lucide="sun-medium"></i> Autoestima</span>
+      </section>
 
-        <fieldset>
-          <legend>Dados pessoais</legend>
-
-          <div class="field-group">
-            <label for="name">Nome completo</label>
-            <input id="name" name="name" type="text" placeholder="Ex.: Ana Souza" required />
-          </div>
-
-          <div class="field-row">
-            <div class="field-group">
-              <label for="email">E-mail</label>
-              <input id="email" name="email" type="email" placeholder="ana@email.com" required />
-            </div>
-
-            <div class="field-group">
-              <label for="phone">Telefone</label>
-              <input id="phone" name="phone" type="tel" placeholder="(11) 99999-9999" />
-            </div>
-          </div>
-        </fieldset>
-
-        <fieldset>
-          <legend>Endereço</legend>
-
-          <div class="field-row cep-row">
-            <div class="field-group">
-              <label for="cep">CEP</label>
-              <input
-                id="cep"
-                name="cep"
-                type="text"
-                inputmode="numeric"
-                maxlength="9"
-                placeholder="00000-000"
-                required
-              />
-            </div>
-
-            <div class="field-group">
-              <label for="state">UF</label>
-              <input id="state" name="state" type="text" maxlength="2" placeholder="SP" />
-            </div>
-          </div>
-
-          <div class="field-group">
-            <label for="street">Logradouro</label>
-            <input id="street" name="street" type="text" placeholder="Rua, avenida, travessa..." />
-          </div>
-
-          <div class="field-row">
-            <div class="field-group">
-              <label for="number">Número</label>
-              <input id="number" name="number" type="text" placeholder="123" />
-            </div>
-
-            <div class="field-group">
-              <label for="complement">Complemento</label>
-              <input id="complement" name="complement" type="text" placeholder="Apto, bloco..." />
-            </div>
-          </div>
-
-          <div class="field-row">
-            <div class="field-group">
-              <label for="neighborhood">Bairro</label>
-              <input id="neighborhood" name="neighborhood" type="text" placeholder="Centro" />
-            </div>
-
-            <div class="field-group">
-              <label for="city">Cidade</label>
-              <input id="city" name="city" type="text" placeholder="São Paulo" />
-            </div>
-          </div>
-        </fieldset>
-
-        <div class="actions">
-          <button class="button primary" type="submit">Salvar cadastro</button>
-          <button class="button secondary" type="button" id="clearForm">Limpar dados</button>
+      <section class="section split" id="sobre">
+        <div class="image-frame">
+          <img src="assets/rosiane-gomes-sobre.jpg" alt="Rosiane Gomes" />
         </div>
-      </form>
+        <div class="section-copy">
+          <p class="eyebrow">Sobre mim</p>
+          <h2>Uma jornada de cura, fé e reconstrução da identidade.</h2>
+          <p>
+            Sou psicanalista, psicoterapeuta e terapeuta cristã. A minha própria jornada foi
+            marcada por desafios emocionais profundos, como rejeição, comparação, abandono e
+            momentos de solidão, que se tornaram caminhos de aprendizado, fortalecimento espiritual
+            e reconstrução da minha identidade.
+          </p>
+          <p>
+            Movida pelo desejo de compreender a mente humana e ajudar outras pessoas a encontrarem
+            caminhos de cura, uni o conhecimento terapêutico aos princípios da fé cristã. Hoje,
+            dedico a minha vida a auxiliar pessoas na restauração emocional, no fortalecimento da
+            identidade e na reconexão com o seu propósito de vida.
+          </p>
+          <ul class="check-list">
+            <li><i data-lucide="check"></i> Escuta sensível, acolhedora e sem julgamentos</li>
+            <li><i data-lucide="check"></i> Abordagem integrativa entre psicoterapia e espiritualidade</li>
+            <li><i data-lucide="check"></i> Cuidado para identidade, cura interior e propósito de vida</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="section approach" id="abordagem">
+        <div class="section-heading">
+          <p class="eyebrow">Abordagem</p>
+          <h2>Psicoterapia integrativa com foco em restauração, identidade e propósito.</h2>
+        </div>
+        <div class="approach-grid">
+          <article>
+            <i data-lucide="ear"></i>
+            <h3>Escuta qualificada</h3>
+            <p>Compreensão das suas experiências sem julgamentos, com perguntas profundas sobre a raiz para compreender o agora.</p>
+          </article>
+          <article>
+            <i data-lucide="compass"></i>
+            <h3>Direção com propósito</h3>
+            <p>Identificação de padrões, necessidades e bloqueios para transformar percepções em atitudes concretas.</p>
+          </article>
+          <article>
+            <i data-lucide="flower-2"></i>
+            <h3>Cuidado integral</h3>
+            <p>Atenção à mente, emoção, história pessoal e espiritualidade, sempre com respeito ao seu tempo.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section therapies" id="terapias">
+        <div class="section-heading">
+          <p class="eyebrow">Terapias</p>
+          <h2>Areas de acompanhamento</h2>
+        </div>
+
+        <div class="therapy-grid">
+          <article class="therapy-card">
+            <i data-lucide="cloud-sun"></i>
+            <h3>Ansiedade e stress</h3>
+            <p>Organização emocional, respiração, consciência de gatilhos e estratégias para lidar com sobrecarga.</p>
+          </article>
+          <article class="therapy-card">
+            <i data-lucide="heart"></i>
+            <h3>Autoestima</h3>
+            <p>Reconstrução da autoconfiança, revisão de crenças e fortalecimento da relação consigo.</p>
+          </article>
+          <article class="therapy-card">
+            <i data-lucide="message-square-heart"></i>
+            <h3>Relacionamentos</h3>
+            <p>Limites, comunicação, dependência emocional, conflitos familiares e escolhas afetivas.</p>
+          </article>
+          <article class="therapy-card">
+            <i data-lucide="route"></i>
+            <h3>Transições de vida</h3>
+            <p>Apoio em lutos, mudanças profissionais, maternidade, separações e momentos de redefinição.</p>
+          </article>
+          <article class="therapy-card">
+            <i data-lucide="brain"></i>
+            <h3>Autoconhecimento</h3>
+            <p>Leitura de padrões, bloqueios, histórias emocionais e escolhas para viver com mais coerência interna.</p>
+          </article>
+          <article class="therapy-card">
+            <i data-lucide="video"></i>
+            <h3>Terapia online</h3>
+            <p>Sessões por videochamada com privacidade, pontualidade e continuidade no acompanhamento.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section process">
+        <div class="section-heading">
+          <p class="eyebrow">Como funciona</p>
+          <h2>Um caminho simples para começar</h2>
+        </div>
+        <div class="steps">
+          <article>
+            <span>01</span>
+            <h3>Contacto inicial</h3>
+            <p>Envie uma mensagem com o que procura e a disponibilidade que costuma ter.</p>
+          </article>
+          <article>
+            <span>02</span>
+            <h3>Primeira sessão</h3>
+            <p>Conversamos sobre a sua história, objetivos e o formato mais adequado para o acompanhamento.</p>
+          </article>
+          <article>
+            <span>03</span>
+            <h3>Plano de cuidado</h3>
+            <p>As sessões seguem o seu ritmo, com revisões periodicas do que esta a mudar.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="quote-band">
+        <div>
+          <p>
+            "Cada história carrega uma raiz emocional. Quando a raiz é tratada, a vida floresce com propósito."
+          </p>
+          <span>Rosiane Gomes - Psicoterapeuta Integrativa | Método RAIZ Vida Plena&reg;</span>
+        </div>
+      </section>
+
+      <section class="section testimonials" id="depoimentos">
+        <div class="section-heading">
+          <p class="eyebrow">Depoimentos</p>
+          <h2>Histórias de cura, identidade e transformação</h2>
+        </div>
+        <div class="testimonial-grid">
+          <figure>
+            <blockquote>
+              Cheguei até a Rosiane completamente perdida emocionalmente. Através do Método RAIZ
+              Vida Plena, comecei a compreender minhas emoções, meus bloqueios e a reconstruir
+              minha história com verdade, fé e consciência.
+            </blockquote>
+            <figcaption>Paciente, 34 anos</figcaption>
+          </figure>
+          <figure>
+            <blockquote>
+              Eu vivia em estado constante de ansiedade, tentando agradar todos à minha volta e
+              esquecendo completamente de mim. Nas sessões com a Rosiane, aprendi que minha mente
+              precisava ser reeducada e meu emocional acolhido.
+            </blockquote>
+            <figcaption>Paciente, 29 anos</figcaption>
+          </figure>
+          <figure>
+            <blockquote>
+              Encontrei no atendimento da Rosiane um lugar seguro para cuidar da mente, das emoções
+              e também da fé. Pela primeira vez senti que alguém olhava para minha história sem
+              julgamento, mas com direção e propósito.
+            </blockquote>
+            <figcaption>Paciente, 37 anos</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="section faq">
+        <div class="section-heading">
+          <p class="eyebrow">Perguntas frequentes</p>
+          <h2>Antes de marcar</h2>
+        </div>
+        <div class="faq-list">
+          <details>
+            <summary>Quanto tempo dura uma sessao?</summary>
+            <p>Em geral, cada sessao dura cerca de 50 minutos. O tempo pode ser ajustado conforme o formato combinado.</p>
+          </details>
+          <details>
+            <summary>A terapia online funciona?</summary>
+            <p>Sim. Com um local reservado e boa ligacao, a terapia online permite continuidade, privacidade e flexibilidade.</p>
+          </details>
+          <details>
+            <summary>Com que frequencia devo fazer terapia?</summary>
+            <p>A frequencia mais comum e semanal, mas isso e definido em conjunto a partir das suas necessidades.</p>
+          </details>
+        </div>
+      </section>
+
+      <section class="contact-section" id="contactos">
+        <div class="contact-copy">
+          <p class="eyebrow">Contactos</p>
+          <h2>Vamos conversar sobre o que esta a precisar de cuidado?</h2>
+          <p>
+            Envie uma mensagem para saber horarios, valores e disponibilidade. A primeira resposta
+            ajuda a perceber o melhor formato para o seu momento.
+          </p>
+        </div>
+
+        <div class="contact-actions">
+          <a class="contact-card" href="https://wa.me/351933273952" target="_blank" rel="noreferrer">
+            <i data-lucide="message-circle"></i>
+            <span>
+              <strong>WhatsApp</strong>
+              +351 933 273 952
+            </span>
+          </a>
+          <a class="contact-card" href="mailto:rosianegomes.terapeuta@gmail.com">
+            <i data-lucide="mail"></i>
+            <span>
+              <strong>Email</strong>
+              rosianegomes.terapeuta@gmail.com
+            </span>
+          </a>
+          <a
+            class="contact-card"
+            href="https://www.instagram.com/rosianegomes.psicoterapeuta_?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+            target="_blank"
+            rel="noreferrer"
+          >
+            <i data-lucide="instagram"></i>
+            <span>
+              <strong>Instagram</strong>
+              @rosianegomes.psicoterapeuta_
+            </span>
+          </a>
+        </div>
+      </section>
     </main>
+
+    <footer class="site-footer">
+      <p>Rosiane Gomes - Psicoterapeuta Integrativa</p>
+      <p>Conteudo informativo. Em caso de emergencia, contacte os servicos de urgencia da sua regiao.</p>
+    </footer>
+
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+    <script src="script.js"></script>
   </body>
 </html>
